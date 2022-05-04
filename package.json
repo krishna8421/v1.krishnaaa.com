@@ -1,0 +1,43 @@
+{
+  "name": "krishnaaa.com",
+  "version": "0.0.1",
+  "description": "My Site",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc"
+  },
+  "homepage": "krishnaaa.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krishna8421/krishnaaa.com.git"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.6.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3",
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-query": "^3.38.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^12.12.21",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^18.0.3",
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.7",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.6",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24",
+    "typescript": "4.0"
+  }
+}
