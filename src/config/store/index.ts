@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import valReducer from "@features/valSlice"
+import valReducer from "@slices/valSlice"
 
 export function makeStore() {
   return configureStore({

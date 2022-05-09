@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { increment, decrement, selectVal } from "src/features/valSlice";
+import { increment, decrement, selectVal } from "src/slices/valSlice";
 import { useAppDispatch, useAppSelector } from "@hooks/redux";
 
 const Index: NextPage = () => {
@@ -7,8 +7,8 @@ const Index: NextPage = () => {
   const val = useAppSelector(selectVal);
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-gray-50">
-      <p>krishnaaa.com</p>
+    <div className="flex flex-col min-h-screen items-center justify-center">
+      <h1>krishnaaa.com</h1>
       <div className="space-x-4">
         <button onClick={() => dispatch(decrement())}>-</button>
         <span>{val}</span>

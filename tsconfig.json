@@ -15,7 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["./src/app/*"],
+      "@config/*": ["./src/config/*"],
       "@public/*": ["./public/*"],
       "@utils/*": ["./src/utils/*"],
       "@hooks/*": ["./src/hooks/*"],
@@ -23,7 +23,7 @@
       "@api/*": ["./src/pages/api/*"],
       "@styles/*": ["./src/styles/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@features/*": ["./src/features/*"],
+      "@slices/*": ["./src/slices/*"],
       "@interface/*": ["./src/interface/*"],
       "@components/*": ["./src/components/*"],
     },
