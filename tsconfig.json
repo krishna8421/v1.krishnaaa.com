@@ -24,8 +24,9 @@
       "@styles/*": ["./src/styles/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@slices/*": ["./src/slices/*"],
-      "@interface/*": ["./src/interface/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
       "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
     },
     "incremental": true
   },

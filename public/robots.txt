@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://krishnaaa.com
+
+# Sitemaps
+Sitemap: https://krishnaaa.com/sitemap.xml
