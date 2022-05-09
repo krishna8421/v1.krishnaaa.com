@@ -27,9 +27,15 @@
       "@interfaces/*": ["./src/interfaces/*"],
       "@components/*": ["./src/components/*"],
       "@constants/*": ["./src/constants/*"],
+      "@contentlayer/generated": ["./.contentlayer/generated"]
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    ".contentlayer/generated"
+  ],
   "exclude": ["node_modules"]
 }
