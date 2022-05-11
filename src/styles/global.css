@@ -1,41 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('tailwind.css');
+@import url('fonts.css');
 
 @layer base {
     body {
         font-family: 'IBMPlexMono', monospace;
         background-color: #070014;
         background-image: url("/images/circuit.svg");
-    }
-    @font-face {
-        font-family: 'IBMPlexMono';
-        font-style: italic;
-        font-weight: 400;
-        src: url('/fonts/IBMPlexMono/IBMPlexMono-Italic.woff2') format('woff2'), url('/fonts/IBMPlexMono/IBMPlexMono-Italic.woff') format('woff');
-    }
-    @font-face {
-        font-family: 'IBMPlexMono';
-        font-style: normal;
-        font-weight: 700;
-        src: url('/fonts/IBMPlexMono/IBMPlexMono-Bold.woff2') format('woff2'), url('/fonts/IBMPlexMono/IBMPlexMono-Bold.woff') format('woff');
-    }
-    @font-face {
-        font-family: 'IBMPlexMono';
-        font-style: normal;
-        font-weight: 600;
-        src: url('/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2') format('woff2'), url('/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff') format('woff');
-    }
-    @font-face {
-        font-family: 'IBMPlexMono';
-        font-style: italic;
-        font-weight: 600;
-        src: url('/fonts/IBMPlexMono/IBMPlexMono-SemiBoldItalic.woff2') format('woff2'), url('/fonts/IBMPlexMono/IBMPlexMono-SemiBoldItalic.woff') format('woff');
-    }
-    @font-face {
-        font-family: 'IBMPlexMono';
-        font-style: normal;
-        font-weight: 400;
-        src: url('/fonts/IBMPlexMono/IBMPlexMono-Regular.woff2') format('woff2'), url('/fonts/IBMPlexMono/IBMPlexMono-Regular.woff') format('woff');
+        @apply scroll-smooth
     }
 }

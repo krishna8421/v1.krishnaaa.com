@@ -1,5 +1,6 @@
 // const withPWA = require('next-pwa')
 // const runtimeCaching = require('next-pwa/cache')
+// const { withContentlayer } = require('next-contentlayer');
 
 /**
  * @type {import('next').NextConfig}
@@ -21,4 +22,5 @@ const nextConfig = {
 }
 
 // module.exports = withPWA(nextConfig)
-module.exports = (nextConfig)
+// module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig
