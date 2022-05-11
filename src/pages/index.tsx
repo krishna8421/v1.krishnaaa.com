@@ -10,7 +10,7 @@ const Index: NextPage = () => {
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center">
-      <h1>krishnaaa.com</h1>
+      <h1>krishna kumar</h1>
       <div className="space-x-4">
         <button
           onClick={() => {
