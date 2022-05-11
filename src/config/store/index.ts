@@ -1,12 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
-import valReducer from "@slices/valSlice"
+import { configureStore } from "@reduxjs/toolkit";
+import valReducer from "@slices/valSlice";
 
 export function makeStore() {
   return configureStore({
-    reducer: valReducer
-  })
+    reducer: valReducer,
+  });
 }
 
-const store = makeStore()
+const store = makeStore();
 
-export default store
+export default store;

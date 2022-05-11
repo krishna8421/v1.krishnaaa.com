@@ -7,12 +7,11 @@ import store from "@config/store";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     // <AnimatePresence exitBeforeEnter >
-      <Provider store={store}>
-        <div className="hello w-screen h-screen text-white">
-
+    <Provider store={store}>
+      <div className="hello w-screen h-screen text-white">
         <Component {...pageProps} />
-        </div>
-      </Provider>
+      </div>
+    </Provider>
     // </AnimatePresence>
   );
 }

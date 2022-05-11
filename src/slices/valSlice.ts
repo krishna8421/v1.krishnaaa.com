@@ -1,29 +1,29 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { AppState } from '@interfaces/redux'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { AppState } from "@interfaces/redux";
 
 interface ValState {
-  val: number
+  val: number;
 }
 
 const initialState: ValState = {
-  val: 0
-}
+  val: 0,
+};
 
 export const valSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState,
   reducers: {
-    increment: state => {
-      state.val += 1
+    increment: (state) => {
+      state.val += 1;
     },
-    decrement: state => {
-      state.val -= 1
-    }
-  }
-})
+    decrement: (state) => {
+      state.val -= 1;
+    },
+  },
+});
 
-export const { increment, decrement } = valSlice.actions
+export const { increment, decrement } = valSlice.actions;
 
-export const selectVal = (state: AppState) => state.val
+export const selectVal = (state: AppState) => state.val;
 
-export default valSlice.reducer
+export default valSlice.reducer;
