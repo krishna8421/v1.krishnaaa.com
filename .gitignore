@@ -40,3 +40,6 @@ yarn-error.log*
 # sitemap (create only at build time)
 /public/robots.txt
 /public/sitemap*.xml
+
+# eslint cache
+.eslintcache
