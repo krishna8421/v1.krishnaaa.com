@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Head>
           <title>Krishna Kumar</title>
         </Head>
-        <GoogleAnalytics gaMeasurementId={GOOGLE_ANALYTICS_ID} />
+        <GoogleAnalytics gaMeasurementId={GOOGLE_ANALYTICS_ID} strategy="afterInteractive" />
         <Component {...pageProps} />
       </div>
     </Provider>

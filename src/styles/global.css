@@ -1,11 +1,11 @@
-@import url('tailwind.css');
-@import url('fonts.css');
+@import url("tailwind.css");
+@import url("fonts.css");
 
 @layer base {
-    body {
-        font-family: 'IBMPlexMono', monospace;
-        background-color: #070014;
-        background-image: url("/images/circuit.svg");
-        @apply scroll-smooth
-    }
+  body {
+    font-family: "IBMPlexMno", monospace;
+    background-color: #070014;
+    background-image: url("/images/circuit.svg");
+    @apply scroll-smooth;
+  }
 }
