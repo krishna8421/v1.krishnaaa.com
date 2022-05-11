@@ -43,3 +43,7 @@ yarn-error.log*
 
 # eslint cache
 .eslintcache
+
+# PWA files
+/public/sw.js*
+/public/workbox*.js*
