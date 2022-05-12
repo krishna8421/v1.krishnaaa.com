@@ -3,12 +3,11 @@ import type { AppProps } from "next/app";
 // import { AnimatePresence } from "framer-motion";
 import { Provider } from "react-redux";
 import store from "@config/store";
-import { GoogleAnalytics, usePagesViews } from "nextjs-google-analytics";
 import { GOOGLE_ANALYTICS_ID } from "@constants/index";
 import Head from "next/head";
+import GoogleAnalytics from "@components/GoogleAnalytics";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  usePagesViews(GOOGLE_ANALYTICS_ID);
   return (
     // <AnimatePresence exitBeforeEnter >
     <Provider store={store}>
@@ -16,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Head>
           <title>Krishna Kumar</title>
         </Head>
-        <GoogleAnalytics gaMeasurementId={GOOGLE_ANALYTICS_ID} strategy="afterInteractive" />
+        <GoogleAnalytics measurementId={GOOGLE_ANALYTICS_ID} />
         <Component {...pageProps} />
       </div>
     </Provider>

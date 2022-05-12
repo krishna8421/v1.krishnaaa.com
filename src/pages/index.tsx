@@ -1,8 +1,6 @@
 import { NextPage } from "next";
 import { increment, decrement, selectVal } from "src/slices/valSlice";
 import { useAppDispatch, useAppSelector } from "@hooks/redux";
-import { event } from "nextjs-google-analytics";
-import { GOOGLE_ANALYTICS_ID } from "@constants/index";
 
 const Index: NextPage = () => {
   const dispatch = useAppDispatch();
@@ -15,15 +13,6 @@ const Index: NextPage = () => {
         <button
           onClick={() => {
             dispatch(decrement());
-            event(
-              "click",
-              {
-                category: "button",
-                label: "decrement",
-                value: 1,
-              },
-              GOOGLE_ANALYTICS_ID,
-            );
           }}
         >
           -
@@ -32,15 +21,6 @@ const Index: NextPage = () => {
         <button
           onClick={() => {
             dispatch(increment());
-            event(
-              "click",
-              {
-                category: "button",
-                label: "increment",
-                value: 1,
-              },
-              GOOGLE_ANALYTICS_ID,
-            );
           }}
         >
           +
