@@ -4,7 +4,7 @@ import { SITE_DESCRIPTION } from "@constants/index";
 const Document = () => (
   <Html lang="en">
     <Head>
-      <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico" />
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="shortcut icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16" />
       <link rel="shortcut icon" type="image/png" href="/icons/favicon-24x24.png" sizes="24x24" />
       <link rel="shortcut icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32" />
@@ -31,6 +31,7 @@ const Document = () => (
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon-144x144.png" sizes="144x144" />
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png" sizes="152x152" />
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180x180.png" sizes="180x180" />
+      <link rel="mask-icon" href="/icons/safari-mask-icon.svg" color="#6700EA" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#6700EA" />
       <meta name="referrer" content={"strict-origin"} />
