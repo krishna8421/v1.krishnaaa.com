@@ -1,5 +1,5 @@
 // Site Metadata
-export const SITE_TITLE = "Krishna Kumar";
+export const SITE_TITLE = "Krishna Kumar | Full Stack Web Developer";
 export const SITE_DESCRIPTION = "Developer based in India.";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://krishnaaa.com";
 

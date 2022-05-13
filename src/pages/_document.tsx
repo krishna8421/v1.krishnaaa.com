@@ -31,7 +31,6 @@ const Document = () => (
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon-144x144.png" sizes="144x144" />
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png" sizes="152x152" />
       <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180x180.png" sizes="180x180" />
-      <link rel="mask-icon" href="/icons/safari-mask-icon.svg" color="#6700EA" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#6700EA" />
       <meta name="referrer" content={"strict-origin"} />

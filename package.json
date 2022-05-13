@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,json,css}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,json,css,svg}\"",
     "postbuild": "next-sitemap --config sitemap.config.js",
     "prepare": "husky install"
   },
@@ -58,6 +58,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "eslint --cache --fix",
-    "*.{ts,tsx,js,jsx,md,mdx,json,css}": "prettier --write"
+    "*.{ts,tsx,js,jsx,md,mdx,json,css,svg}": "prettier --write"
   }
 }
