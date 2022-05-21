@@ -7,6 +7,11 @@ module.exports = {
       fontFamily: {
         IBMPlexMono: ["IBMPlexMono", ...defaultTheme.fontFamily.mono],
       },
+      colors: {
+        custom: {
+          purple: "#6300E1",
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

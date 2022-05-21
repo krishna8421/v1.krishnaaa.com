@@ -15,7 +15,6 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["./src/*"],
       "@config/*": ["./src/config/*"],
       "@public/*": ["./public/*"],
       "@utils/*": ["./src/utils/*"],
@@ -28,7 +27,8 @@
       "@interfaces": ["./src/interfaces/index.ts"],
       "@components/*": ["./src/components/*"],
       "@constants": ["./src/constants/index.ts"],
-      "@contentlayer/generated": ["./.contentlayer/generated"]
+      "@contentlayer/generated": ["./.contentlayer/generated"],
+      "@src/*": ["./src/*"]
     },
     "incremental": true
   },
