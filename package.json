@@ -48,7 +48,6 @@
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
     "next-pwa": "^5.5.2",
-    "next-seo": "^5.4.0",
     "next-sitemap": "^2.5.20",
     "postcss": "^8.4.13",
     "postcss-import": "^14.1.0",

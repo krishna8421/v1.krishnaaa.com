@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { AppState } from "@interfaces/redux";
+import type { AppState } from "@interfaces";
 
 interface ValState {
   val: number;

@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@src/*": ["./src/*"],
       "@config/*": ["./src/config/*"],
       "@public/*": ["./public/*"],
       "@utils/*": ["./src/utils/*"],
@@ -24,9 +25,9 @@
       "@styles/*": ["./src/styles/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@slices/*": ["./src/slices/*"],
-      "@interfaces/*": ["./src/interfaces/*"],
+      "@interfaces": ["./src/interfaces/index.ts"],
       "@components/*": ["./src/components/*"],
-      "@constants/*": ["./src/constants/*"],
+      "@constants": ["./src/constants/index.ts"],
       "@contentlayer/generated": ["./.contentlayer/generated"]
     },
     "incremental": true

@@ -1,5 +1,4 @@
 import { Head, Html, Main, NextScript } from "next/document";
-import { SITE_DESCRIPTION } from "@constants/index";
 
 const Document = () => (
   <Html lang="en">
@@ -34,7 +33,6 @@ const Document = () => (
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#6700EA" />
       <meta name="referrer" content={"strict-origin"} />
-      <meta name="description" content={SITE_DESCRIPTION} />
     </Head>
     <body>
       <Main />
