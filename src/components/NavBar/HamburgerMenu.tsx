@@ -12,11 +12,11 @@ export const HamburgerMenu = () => {
         alt={`${isOpen ? "Close Hamburger Icon" : "Hamburger Icon"}`}
         width={25}
         height={25}
-        className="cursor-pointer z-10 select-none"
+        className="cursor-pointer z-50 select-none"
         onClick={toggleOpen}
       />
       {isOpen && (
-        <div className="absolute bg-black w-screen min-h-screen inset-0 flex flex-col gap-12 justify-center items-center -top-12">
+        <div className="absolute z-40 bg-black w-screen min-h-screen inset-0 flex flex-col gap-12 justify-center items-center -top-12">
           <NavLink noHide url="/" name="home" />
           <NavLink noHide url="/projects" name="projects" />
           <NavLink noHide url="/blogs" name="blogs" />
@@ -28,7 +28,7 @@ export const HamburgerMenu = () => {
             alt="Close Hamburger Icon"
             width={45}
             height={45}
-            className="cursor-pointer z-10 select-none"
+            className="cursor-pointer z-50 select-none"
             onClick={toggleOpen}
           />
         </div>
