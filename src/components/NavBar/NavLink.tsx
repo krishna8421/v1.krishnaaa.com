@@ -16,7 +16,7 @@ export const NavLink = ({ url, name, noHide }: Props) => {
       <div
         className={`${
           isActive
-            ? "border-b-4 border-custom-purple text-gray-50"
+            ? "underline decoration-4 decoration-custom-purple underline-offset-8 text-gray-50"
             : "text-gray-400 hover:text-gray-300"
         } cursor-pointer transition-all ${noHide ? "" : "hidden"} md:inline-block`}
       >

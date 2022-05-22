@@ -5,7 +5,6 @@ import { NavBar } from "@components/NavBar";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
-import { HamburgerMenu } from "@components/NavBar/HamburgerMenu";
 
 interface Props extends PartialMetaData {
   children: ReactNode;
