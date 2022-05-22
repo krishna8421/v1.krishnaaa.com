@@ -22,7 +22,9 @@ export const Main = ({ children, ...customMeta }: Props) => {
     ...customMeta,
   };
   return (
-    <div className="text-gray-50 selection:bg-custom-purple">
+    // "selection:bg-opacity-99" for background opacity in safari.
+    // Safari doesn't support 100% opacity for selection color.
+    <div className="text-gray-50 selection:bg-custom-purple selection:bg-opacity-99">
       <Head>
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />

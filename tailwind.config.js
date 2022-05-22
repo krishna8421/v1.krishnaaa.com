@@ -12,6 +12,9 @@ module.exports = {
           purple: "#6300E1",
         },
       },
+      opacity: {
+        99: ".99",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
