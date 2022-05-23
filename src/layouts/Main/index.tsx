@@ -15,7 +15,7 @@ export const Main = ({ children, ...customMeta }: Props) => {
   const meta: MetaData = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    url: `${SITE_URL}${router.pathname}`,
+    url: `${SITE_URL}${router.asPath}`,
     name: NAME,
     image: `${SITE_URL}/images/logo.png`,
     type: "website",
@@ -37,6 +37,7 @@ export const Main = ({ children, ...customMeta }: Props) => {
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={`@${TWITTER_USERNAME}`} />
+        <meta name="twitter:creator" content={`@${TWITTER_USERNAME}`} />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />

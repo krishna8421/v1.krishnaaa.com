@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@data/*": ["./src/data/*"],
       "@config/*": ["./src/config/*"],
       "@public/*": ["./public/*"],
       "@utils/*": ["./src/utils/*"],
