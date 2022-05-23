@@ -6,10 +6,12 @@ module.exports = {
     extend: {
       fontFamily: {
         IBMPlexMono: ["IBMPlexMono", ...defaultTheme.fontFamily.mono],
+        PressStart2P: ["PressStart2P", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         custom: {
           purple: "#6300E1",
+          green: "#29E289",
         },
       },
       opacity: {
@@ -17,5 +19,10 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    {
+      pattern: /bg-custom-[a-zA-Z]+/,
+    },
+  ],
   plugins: [require("@tailwindcss/typography")],
 };

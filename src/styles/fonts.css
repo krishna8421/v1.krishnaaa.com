@@ -39,4 +39,12 @@
     src: url("/fonts/IBMPlexMono/IBMPlexMono-Regular.woff2") format("woff2"),
       url("/fonts/IBMPlexMono/IBMPlexMono-Regular.woff") format("woff");
   }
+  @font-face {
+    font-family: "PressStart2P";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/PressStart2P/PressStart2P-Regular.woff2") format("woff2"),
+      url("/fonts/PressStart2P/PressStart2P-Regular.woff") format("woff");
+  }
 }
