@@ -27,7 +27,7 @@ const Project = ({ project }: Props) => {
         {project.tags.map((tag, index) => (
           <span
             key={index}
-            className="inline-block bg-custom-purple rounded-full px-3 py-1 text-xs font-semibold mr-4"
+            className="inline-block bg-custom-purple rounded-full px-3 py-1 text-xs font-semibold mr-4 mt-2"
           >
             {tag}
           </span>
