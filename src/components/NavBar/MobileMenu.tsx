@@ -2,9 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { NavLink } from "./NavLink";
 
-export const HamburgerMenu = () => {
-  const [isOpen, setOpen] = React.useState(false);
-  const toggleOpen = () => setOpen(!isOpen);
+interface Props {
+  isOpen: boolean;
+  toggleOpen: () => void;
+}
+
+export const MobileMenu = ({ toggleOpen, isOpen }: Props) => {
   return (
     <div className="md:hidden">
       <Image
@@ -16,7 +19,7 @@ export const HamburgerMenu = () => {
         onClick={toggleOpen}
       />
       {isOpen && (
-        <div className="absolute z-40 bg-black w-screen min-h-screen inset-0 flex flex-col gap-12 justify-center items-center -top-12">
+        <div className="fixed z-40 bg-black w-screen h-screen inset-0 flex flex-col gap-12 justify-center items-center">
           <NavLink noHide url="/" name="home" />
           <NavLink noHide url="/projects" name="projects" />
           <NavLink noHide url="/blogs" name="blogs" />

@@ -6,9 +6,10 @@ interface Props {
   url: string;
   name: string;
   noHide?: boolean;
+  className?: string;
 }
 
-export const NavLink = ({ url, name, noHide }: Props) => {
+export const NavLink = ({ url, name, noHide, className }: Props) => {
   const router = useRouter();
   const isActive = router.asPath === url;
   return (
@@ -18,7 +19,7 @@ export const NavLink = ({ url, name, noHide }: Props) => {
           isActive
             ? "underline decoration-4 decoration-custom-purple underline-offset-8 text-gray-50"
             : "text-gray-400 hover:text-gray-300"
-        } cursor-pointer transition-all ${noHide ? "" : "hidden"} md:inline-block`}
+        } cursor-pointer transition-all ${noHide ? "" : "hidden"} md:inline-block ${className}`}
       >
         {name}
       </div>
