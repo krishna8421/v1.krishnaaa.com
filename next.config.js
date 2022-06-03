@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
-// const { withContentlayer } = require('next-contentlayer');
+const { withContentlayer } = require("next-contentlayer");
 
 const securityHeaders = () => [
   {
@@ -51,5 +51,4 @@ const nextConfig = {
   },
 };
 
-// module.exports = withContentlayer(nextConfig)
-module.exports = withPWA(nextConfig);
+module.exports = withContentlayer(withPWA(nextConfig));

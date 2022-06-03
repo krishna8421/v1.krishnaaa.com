@@ -1,64 +1,50 @@
-import { projects } from "@data/projects";
 import { Main } from "@layouts/Main";
 import { capitalizeFirstLetter, capitalizeFirstLetterOfEveryWord } from "@utils/capitalize";
-import { Project } from "@interfaces";
 import { GithubIcon } from "@components/SocialIcons";
-import Image from "next/image";
+import { allProjects, Project } from "@contentlayer/generated";
+import { Content } from "@components/Content";
 
-interface Props {
-  project: Project;
-}
-
-const Project = ({ project }: Props) => {
+const Project = ({ project }: { project: Project }) => {
   return (
     <Main
       title={`${capitalizeFirstLetterOfEveryWord(project.name)} | Projects`}
-      description={capitalizeFirstLetter(project.description)}
-      image={project.image[0].src}
+      description={capitalizeFirstLetter(project.summary)}
+      image={project.image}
       type="article"
     >
-      <header className="flex gap-8 mt-24 justify-center w-fit items-center">
+      <header className="flex gap-8 mt-16 justify-center w-fit items-center">
         <h3 className="font-bold text-3xl underline underline-offset-4 decoration-white decoration-4 md:text-5xl">
           <a href={project.url}>{project.name}</a>
         </h3>
         <GithubIcon className="translate-y-1" h={40} w={40} href={project.github} />
       </header>
-      <div className="my-8">
+      <div className="my-12">
         {project.tags.map((tag, index) => (
-          <span
-            key={index}
-            className="inline-block bg-custom-purple rounded-full px-3 py-1 text-xs font-semibold mr-4 mt-2"
-          >
-            {tag}
-          </span>
+          <a href={tag.url} key={index}>
+            <span className="inline-block bg-custom-purple rounded-full px-3 py-1 text-xs font-semibold mr-4 mt-2">
+              {tag.name}
+            </span>
+          </a>
         ))}
       </div>
-      <p className="my-12">{project.description}</p>
-      <div className="mb-24">
-        {project.image.map((image, index) => (
-          <Image
-            key={index}
-            src={image.src}
-            alt={project.name}
-            width={image.w}
-            height={image.h}
-            className="rounded"
-          />
-        ))}
-      </div>
+      <Content content={project.body.code} />
     </Main>
   );
 };
 
 export async function getStaticPaths() {
+  const paths = allProjects.map((project) => ({
+    params: { slug: project.slug.split("/").at(-1) },
+  }));
+
   return {
-    paths: projects.map((p) => ({ params: { slug: p.slug } })),
+    paths: allProjects.map((p) => ({ params: { slug: p.slug.split("/").at(-1) } })),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = allProjects.find((p) => p.slug.split("/").at(-1) === params.slug);
   return { props: { project } };
 }
 
