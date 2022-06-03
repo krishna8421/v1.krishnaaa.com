@@ -7,9 +7,11 @@ const sitemapConfig = {
   generateRobotsTxt: true,
   exclude: [],
   robotsTxt: true,
+  priority: 0.9,
+  changefreq: "daily",
   robotsTxtOptions: {
     policies: [{ userAgent: "*", allow: "/" }],
-    additionalSitemaps: [`${SITE_URL}/dynamic-sitemap.xml`],
+    // additionalSitemaps: [`${SITE_URL}/dynamic-sitemap.xml`],
   },
 };
 
