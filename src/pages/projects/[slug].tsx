@@ -34,11 +34,11 @@ const Project = ({ project }: { project: Project }) => {
 
 export async function getStaticPaths() {
   const paths = allProjects.map((project) => ({
-    params: { slug: project.slug.split("/").at(-1) },
+    params: { slug: typeof project.slug === "string" ? project.slug.split("/").at(-1) : "" },
   }));
 
   return {
-    paths: allProjects.map((p) => ({ params: { slug: p.slug.split("/").at(-1) } })),
+    paths: paths,
     fallback: false,
   };
 }
