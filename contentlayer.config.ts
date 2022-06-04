@@ -43,9 +43,16 @@ export const Project = defineDocumentType(() => ({
     },
   },
   computedFields: {
-    slug: {
+    path: {
       type: "string",
       resolve: (project) => `/${project._raw.flattenedPath}`,
+    },
+    slug: {
+      type: "string",
+      resolve: (project) => {
+        const pathArr = project._raw.flattenedPath.split("/");
+        return pathArr[pathArr.length - 1];
+      },
     },
   },
 }));
