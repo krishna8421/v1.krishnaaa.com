@@ -33,12 +33,18 @@ const Project = ({ project }: { project: Project }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = allProjects.map((project) => ({
-    params: { slug: typeof project.slug === "string" ? project.slug.split("/").at(-1) : "" },
-  }));
-
+  const paths = allProjects.map((project) => {
+    const slugArr = project.slug.split("/");
+    const slug = slugArr[slugArr.length - 1];
+    return {
+      params: {
+        slug,
+      },
+    };
+  });
+  console.log(paths);
   return {
-    paths: paths,
+    paths,
     fallback: false,
   };
 }
