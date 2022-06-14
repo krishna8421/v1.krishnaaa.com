@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/_subdomains/go/:lib*", "destination": "https://go.krishnaaa.com/:lib*" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}

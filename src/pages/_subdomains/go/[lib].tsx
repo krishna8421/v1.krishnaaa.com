@@ -3,10 +3,10 @@ import { Main } from "@layouts/Main";
 
 const Go = () => {
   const router = useRouter();
-  const { slug } = router.query;
+  const { lib } = router.query;
   console.log(router);
 
-  return <Main>Lib: {slug}</Main>;
+  return <Main>Lib: {lib}</Main>;
 };
 
 export default Go;
