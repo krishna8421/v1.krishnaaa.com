@@ -49,6 +49,14 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/_subdomains/go/:slug*",
+        destination: "https://go.krishnaaa.com/:slug*",
+      },
+    ];
+  },
 };
 
 module.exports = withContentlayer(withPWA(nextConfig));
