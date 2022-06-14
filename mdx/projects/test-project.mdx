@@ -10,6 +10,168 @@ tags:
     url: https://test.test
 ---
 
-## hey
+## Heading
 
-this is a test project.
+> Horizontal rule is created using `---` on a line by itself. Horizontal rule is created using `---` on a line by itself.Horizontal rule is created using `---` on a line by itself.
+
+`This is test 1`
+`This is test 2`
+
+```javascript:hello.js {2,4-7} showLineNumbers
+export const Content = ({ content }: Props) => {
+  const Content = useMDXComponent(content);
+  const components = {
+    Image: CustomImages,
+  };
+  return (
+    <div className="prose my-16 mx-auto max-w-none">
+      <Content components={components} />
+    </div>
+  );
+};
+```
+
+## Text Writing
+
+This is a test para
+
+## Headings
+
+```
+# Sample H1
+## Sample H2
+### Sample H3
+```
+
+will produce
+
+# Sample H1
+
+## Sample H2
+
+### Sample H3
+
+---
+
+## Horizontal Rules
+
+Horizontal rule is created using `---` on a line by itself.
+
+---
+
+## Coding - Block
+
+{/* <pre> */}
+
+```ruby
+# The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
+
+# Create a new object
+g = Greeter.new("world")
+
+# Output "Hello World!"
+g.salute
+```
+
+{/* </pre> */}
+
+will produce
+
+```ruby
+# The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
+
+# Create a new object
+g = Greeter.new("world")
+
+# Output "Hello World!"
+g.salute
+```
+
+Note: You can specify the different syntax highlighting based on the coding language eg. ruby, sh (for shell), php, etc  
+Note: You must leave a blank line before the \`\`\`
+
+## Coding - In-line
+
+You can produce inline-code by using only one \` to enclose the code:
+
+```
+This is some code: ``echo something``
+```
+
+will produce
+
+This is some code: `echo something`
+
+---
+
+## Text Formatting
+
+**Bold Text** is done using `**Bold Text**`  
+_Italic Text_ is done using `*Italic Text*`
+
+---
+
+## Escape sequence
+
+You can escape using \\ eg: \\\`
+
+---
+
+## Creating list
+
+Adding a `-` will change it into a list:
+
+```
+- Item 1
+- Item 2
+- Item 3
+```
+
+will produce
+
+- Item 1
+- Item 2
+- Item 3
+
+1. salute1
+2. salute2
+3. salute3
+
+---
+
+## Quoting
+
+You can create a quote using `>`:
+
+```
+> This is a quote
+```
+
+will produce
+
+> This is a quote
+
+## Table and Definition list
+
+| name | age |
+| ---- | --- |
+| John | 35  |
+| Jane | 42  |

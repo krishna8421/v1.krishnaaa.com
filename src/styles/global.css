@@ -1,5 +1,6 @@
 @import url("tailwind.css");
 @import url("fonts.css");
+@import url("mdx.css");
 
 @layer base {
   body {

@@ -1,4 +1,10 @@
 import { defineDocumentType, defineNestedType, makeSource } from "contentlayer/source-files";
+import readingTime from "reading-time";
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import rehypeCodeTitles from "rehype-code-titles";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrism from "rehype-prism-plus";
 
 const ProjectTag = defineNestedType(() => ({
   name: "Tag",
@@ -61,7 +67,19 @@ export default makeSource({
   contentDirPath: "mdx",
   documentTypes: [Project],
   mdx: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      rehypeCodeTitles,
+      rehypePrism,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ["anchor"],
+          },
+        },
+      ],
+    ],
   },
 });

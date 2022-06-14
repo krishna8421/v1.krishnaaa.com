@@ -43,7 +43,7 @@ export const Main = ({ children, ...customMeta }: Props) => {
         <meta name="twitter:image" content={meta.image} />
         {meta?.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <div className="max-w-4xl px-6 lg:px-0 transition-all duration-500 m-auto min-h-screen relative flex flex-col">
+      <div className="relative m-auto flex min-h-screen max-w-3xl flex-col px-6 transition-all duration-500 lg:px-0">
         <NavBar />
         <main className="flex-grow">{children}</main>
         <Footer />

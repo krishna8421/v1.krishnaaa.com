@@ -13,5 +13,9 @@ export const Content = ({ content }: Props) => {
   const components = {
     Image: CustomImages,
   };
-  return <Content components={components} />;
+  return (
+    <div className="prose my-16 mx-auto max-w-none">
+      <Content components={components} />
+    </div>
+  );
 };

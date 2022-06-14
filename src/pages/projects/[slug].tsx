@@ -12,8 +12,8 @@ const Project = ({ project }: { project: Project }) => {
       image={project.image}
       type="article"
     >
-      <header className="flex gap-8 mt-16 justify-center w-fit items-center">
-        <h3 className="font-bold text-3xl underline underline-offset-4 decoration-white decoration-4 md:text-5xl">
+      <header className="mt-16 flex w-fit items-center justify-center gap-8">
+        <h3 className="text-3xl font-bold underline decoration-white decoration-4 underline-offset-4 md:text-5xl">
           <a href={project.url}>{project.name}</a>
         </h3>
         <GithubIcon className="translate-y-1" h={40} w={40} href={project.github} />
@@ -21,7 +21,7 @@ const Project = ({ project }: { project: Project }) => {
       <div className="my-12">
         {project.tags.map((tag, index) => (
           <a href={tag.url} key={index}>
-            <span className="inline-block bg-custom-purple rounded-full px-3 py-1 text-xs font-semibold mr-4 mt-2">
+            <span className="mr-4 mt-2 inline-block rounded-full bg-custom-purple px-3 py-1 text-xs font-semibold">
               {tag.name}
             </span>
           </a>
