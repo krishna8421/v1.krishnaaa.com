@@ -10,7 +10,7 @@ export const LOGS_DESCRIPTION: string = "Find my recent commits and work history
 export const REPOS_DESCRIPTION: string = "All my public Github Repos";
 
 // Social Media
-export const EMAIL_ADDRESS: string = "hey@krishnaaa.com";
+export const EMAIL_ADDRESS: string = "dev@krishnaaa.com";
 export const GITHUB_USERNAME: string = "krishna8421";
 export const TWITTER_USERNAME: string = "krishnaaa8421";
 export const LINKEDIN_USERNAME: string = "krishnaaa8421";
