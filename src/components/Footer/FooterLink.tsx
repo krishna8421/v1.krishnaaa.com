@@ -2,8 +2,8 @@ import Link from "next/link";
 import React from "react";
 
 interface Props {
-  url;
-  name;
+  url: string;
+  name: string;
 }
 
 export const FooterLink = ({ url, name }: Props) => (

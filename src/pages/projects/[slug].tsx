@@ -3,6 +3,7 @@ import { capitalizeFirstLetter, capitalizeFirstLetterOfEveryWord } from "@utils/
 import { GithubIcon } from "@components/SocialIcons";
 import { allProjects, Project } from "@contentlayer/generated";
 import { Content } from "@components/Content";
+import Tags from "@components/Tag";
 
 const Project = ({ project }: { project: Project }) => {
   return (
@@ -20,11 +21,7 @@ const Project = ({ project }: { project: Project }) => {
       </header>
       <div className="my-12">
         {project.tags.map((tag, index) => (
-          <a href={tag.url} key={index}>
-            <span className="mr-4 mt-2 inline-block rounded-full bg-custom-purple px-3 py-1 text-xs font-semibold">
-              {tag.name}
-            </span>
-          </a>
+          <Tags key={index} name={tag.name} url={tag.url} />
         ))}
       </div>
       <Content content={project.body.code} />
