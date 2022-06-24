@@ -2,7 +2,6 @@ import classnames from "classnames";
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 interface Props {
-  text: string;
   onClick?: any;
   bgColor?: string;
   textColor?: string;
@@ -10,16 +9,17 @@ interface Props {
   bgClass?: string;
   buttonClass?: string;
   type?: "submit" | "reset" | "button" | undefined;
+  children?: React.ReactNode;
 }
 
 export const LayerButton = ({
   onClick,
-  text,
   bgColor,
   buttonColor,
   bgClass,
   buttonClass,
   type,
+  children,
 }: Props) => {
   const classNameBackground = classnames("relative w-fit", bgColor ?? "bg-custom-green", bgClass);
   const classNameButton = classnames(
@@ -30,7 +30,7 @@ export const LayerButton = ({
   return (
     <div className={classNameBackground}>
       <button className={classNameButton} onClick={onClick} type={type ? type : "button"}>
-        {text}
+        {children}
       </button>
     </div>
   );

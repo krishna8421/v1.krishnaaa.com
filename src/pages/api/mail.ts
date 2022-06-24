@@ -21,11 +21,11 @@ export default async function verifyToken(req: NextApiRequest, res: NextApiRespo
     from: `${req.body.name} <contact@krishnaaa.com>`,
     subject: `Krishnaaa.com | New message from ${req.body.name}`,
     html: `
-        <h3>Name: ${req.body.name}</h3>
-        <p>Email: ${req.body.email}</p>
-        <p>${req.headers["x-forwarded-for"] || req.connection.remoteAddress}</p>
-        <p>${req.headers["user-agent"]}</p>
-        <p>${new Date().toLocaleString()}</p>
+        <h3>Name:         ${req.body.name}</h3>
+        <p>Email:         ${req.body.email}</p>
+        <p>IP:            ${req.headers["x-forwarded-for"] || req.connection.remoteAddress}</p>
+        <p>User Agent:    ${req.headers["user-agent"]}</p>
+        <p>Date:          ${new Date().toLocaleString()}</p>
         <br>
         <p>${req.body.message}</p>
     `,

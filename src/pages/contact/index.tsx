@@ -4,6 +4,7 @@ import { CONTACT_DESCRIPTION, NAME } from "@constants";
 import { LayerButton } from "@components/LayerButton";
 import { ButtonHTMLAttributes, useState } from "react";
 import axios from "axios";
+import { LoadingSpinner } from "@components/LoadingSpinner";
 
 const Contact: NextPage = () => {
   const [name, setName] = useState("");
@@ -11,8 +12,16 @@ const Contact: NextPage = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState<null | string>(null);
   const [success, setSuccess] = useState<null | string>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const reset = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   const sendMail = async (e: any) => {
+    setIsLoading(true);
     e.preventDefault();
     try {
       const res = await axios.post("/api/mail", {
@@ -23,10 +32,14 @@ const Contact: NextPage = () => {
       if (res.status === 200) {
         setError(null);
         setSuccess("Message sent successfully");
+        reset();
       }
+      setIsLoading(false);
     } catch (error) {
       setError(error.response.data.message);
       setSuccess(null);
+      reset();
+      setIsLoading(false);
     }
   };
 
@@ -71,11 +84,12 @@ const Contact: NextPage = () => {
         <p className="text-lg text-red-500">{error}</p>
       </div>
       <LayerButton
-        text="Ping"
         bgClass="mb-16 w-full m-auto"
-        buttonClass="py-3 px-6"
-        onClick={sendMail}
-      />
+        buttonClass={`py-3 px-6 w-32 ${isLoading ? "cursor-not-allowed" : "cursor-pointer"}`}
+        onClick={isLoading ? () => {} : sendMail}
+      >
+        {isLoading ? <LoadingSpinner /> : <span>Ping</span>}
+      </LayerButton>
     </Main>
   );
 };
