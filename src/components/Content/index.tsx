@@ -14,7 +14,7 @@ export const Content = ({ content }: Props) => {
     Image: CustomImages,
   };
   return (
-    <div className="prose my-16 mx-auto max-w-none">
+    <div className="prose my-12 mx-auto max-w-none">
       <Content components={components} />
     </div>
   );

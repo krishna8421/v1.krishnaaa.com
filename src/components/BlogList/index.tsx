@@ -11,10 +11,19 @@ interface Props {
   tags: BlogTag[];
   publishedAt: string;
   readingTime: string;
+  setSearch: (value: string) => void;
 }
 const IMAGE_HEIGHT = 250;
 
-export const BlogList = ({ title, path, image, tags, publishedAt, readingTime }: Props) => {
+export const BlogList = ({
+  title,
+  path,
+  image,
+  tags,
+  publishedAt,
+  readingTime,
+  setSearch,
+}: Props) => {
   return (
     <div className="flex flex-col gap-6 px-2 py-6 sm:flex-row md:px-8">
       <Link href={`${path}`} passHref>
@@ -32,7 +41,9 @@ export const BlogList = ({ title, path, image, tags, publishedAt, readingTime }:
         </Link>
         <div className="my-8 sm:mt-0">
           {tags.map((tag, index) => (
-            <Tags key={index} name={tag} />
+            <span onClick={() => setSearch(tag as unknown as string)} key={index}>
+              <Tags name={tag} />
+            </span>
           ))}
         </div>
         <div className="text-sm font-semibold text-gray-500">

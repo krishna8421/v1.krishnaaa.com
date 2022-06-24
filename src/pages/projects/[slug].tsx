@@ -4,11 +4,12 @@ import { GithubIcon } from "@components/SocialIcons";
 import { allProjects, Project } from "@contentlayer/generated";
 import { Content } from "@components/Content";
 import Tags from "@components/Tag";
+import { NAME } from "@constants";
 
 const Project = ({ project }: { project: Project }) => {
   return (
     <Main
-      title={`${capitalizeFirstLetterOfEveryWord(project.name)} | Projects`}
+      title={`${capitalizeFirstLetterOfEveryWord(project.name)} | ${NAME}`}
       description={capitalizeFirstLetter(project.summary)}
       image={project.image}
       type="article"
