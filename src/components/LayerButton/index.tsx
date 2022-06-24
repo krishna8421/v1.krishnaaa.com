@@ -1,14 +1,15 @@
 import classnames from "classnames";
-import React from "react";
+import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 interface Props {
   text: string;
-  onClick?: () => void;
+  onClick?: (e?: any) => void | Promise<void>;
   bgColor?: string;
   textColor?: string;
   buttonColor?: string;
   bgClass?: string;
   buttonClass?: string;
+  type?: "submit" | "reset" | "button" | undefined;
 }
 
 export const LayerButton = ({
@@ -18,8 +19,9 @@ export const LayerButton = ({
   buttonColor,
   bgClass,
   buttonClass,
+  type,
 }: Props) => {
-  const classNameBackground = classnames("relative", bgColor ?? "bg-custom-green", bgClass);
+  const classNameBackground = classnames("relative w-fit", bgColor ?? "bg-custom-green", bgClass);
   const classNameButton = classnames(
     "bg-custom-purple hover:translate-x-1 hover:translate-y-1 transition-all duration-300",
     buttonColor ?? "bg-custom-purple",
@@ -27,7 +29,7 @@ export const LayerButton = ({
   );
   return (
     <div className={classNameBackground}>
-      <button className={classNameButton} onClick={onClick}>
+      <button className={classNameButton} onClick={onClick} type={type ? type : "button"}>
         {text}
       </button>
     </div>

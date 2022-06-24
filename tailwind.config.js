@@ -62,5 +62,5 @@ module.exports = {
       pattern: /bg-custom-[a-zA-Z]+/,
     },
   ],
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
