@@ -9,14 +9,14 @@ export const NavBar = () => {
   const toggleOpen = () => setOpen(!isOpen);
   return (
     <nav
-      className={`flex justify-between items-center h-20 lg:h-24 ${
+      className={`flex h-20 items-center justify-between lg:h-24 ${
         isOpen ? "sticky top-0 z-50" : ""
       }`}
     >
       <Link href="/">
-        <div className="flex items-center gap-2 cursor-pointer select-none">
+        <div className="flex cursor-pointer select-none items-center gap-2">
           <Logo />
-          <span className="font-bold text-lg">`krishna`</span>
+          <span className="text-lg font-bold">`krishna`</span>
         </div>
       </Link>
       <NavLinks />

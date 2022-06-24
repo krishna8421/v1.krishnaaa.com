@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const SocialIcons = () => {
   return (
-    <div className="flex gap-4 justify-center">
+    <div className="flex justify-center gap-4">
       {/* <a href={`mailto:${EMAIL_ADDRESS}`}><Image src="/images/email.svg" alt="Logo" width={25} height={25} /></a>
       <a href={LINKEDIN_URL}><Image src="/images/linkedin.svg" alt="Logo" width={25} height={25} /></a>
       <a href={GITHUB_URL}><Image src="/images/github.svg" alt="Logo" width={25} height={25} /></a>

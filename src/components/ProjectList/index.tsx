@@ -9,7 +9,7 @@ interface Props {
 export const ProjectList = ({ name, path }: Props) => {
   return (
     <Link href={`${path}`} passHref>
-      <div className="flex my-16 md:my-24 cursor-pointer text-3xl  md:text-5xl font-bold underline underline-offset-4 decoration-white decoration-4 hover:translate-x-12 transition-all duration-300">
+      <div className="my-16 flex cursor-pointer text-3xl font-bold  underline decoration-white decoration-4 underline-offset-4 transition-all duration-300 hover:translate-x-12 md:my-24 md:text-5xl">
         <h1>{name}</h1>
       </div>
     </Link>

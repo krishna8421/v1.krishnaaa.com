@@ -15,11 +15,11 @@ export const MobileMenu = ({ toggleOpen, isOpen }: Props) => {
         alt={`${isOpen ? "Close Hamburger Icon" : "Hamburger Icon"}`}
         width={25}
         height={25}
-        className="cursor-pointer z-50 select-none"
+        className="z-50 cursor-pointer select-none"
         onClick={toggleOpen}
       />
       {isOpen && (
-        <div className="fixed z-40 bg-black w-screen h-screen inset-0 flex flex-col gap-12 justify-center items-center">
+        <div className="fixed inset-0 z-40 flex h-screen w-screen flex-col items-center justify-center gap-12 bg-black">
           <NavLink noHide url="/" name="home" />
           <NavLink noHide url="/projects" name="projects" />
           <NavLink noHide url="/blogs" name="blogs" />
@@ -31,7 +31,7 @@ export const MobileMenu = ({ toggleOpen, isOpen }: Props) => {
             alt="Close Hamburger Icon"
             width={45}
             height={45}
-            className="cursor-pointer z-50 select-none"
+            className="z-50 cursor-pointer select-none"
             onClick={toggleOpen}
           />
         </div>

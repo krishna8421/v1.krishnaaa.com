@@ -8,7 +8,7 @@ export const Logo = () => {
         alt="Logo"
         width={35}
         height={35}
-        className="select-none w-fit"
+        className="w-fit select-none"
       />
     </div>
   );
