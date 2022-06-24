@@ -5,6 +5,7 @@ import { Content } from "@components/Content";
 import Tags from "@components/Tag";
 import { NAME } from "@constants";
 import Image from "next/image";
+import Link from "next/link";
 
 const Blogs = ({ blog }: { blog: Blog }) => {
   return (
@@ -33,7 +34,11 @@ const Blogs = ({ blog }: { blog: Blog }) => {
       </div>
       <div className="mb-8 sm:mt-0">
         {blog.tags.map((tag, index) => (
-          <Tags key={index} name={tag} />
+          <Link href={`/blogs?search=${tag as unknown as string}`} key={index}>
+            <a>
+              <Tags name={tag} />
+            </a>
+          </Link>
         ))}
       </div>
       <Image

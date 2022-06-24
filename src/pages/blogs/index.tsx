@@ -4,8 +4,12 @@ import { BLOGS_DESCRIPTION, NAME } from "@constants";
 import { BlogList } from "@components/BlogList";
 import { allBlogs, Blog } from "@contentlayer/generated";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { StringCleanUp } from "@utils/cleanUp";
 
 const Blogs: NextPage = () => {
+  const router = useRouter();
+
   const [blogs, setBlogs] = useState(allBlogs);
   const [search, setSearch] = useState("");
 
@@ -14,7 +18,8 @@ const Blogs: NextPage = () => {
     setSearch(value);
   };
 
-  const handleFilter = (value: string) => {
+  const handleFilter = (val: string) => {
+    const value = StringCleanUp(val);
     if (value === "" || value == null) {
       setBlogs(allBlogs);
     }
@@ -38,6 +43,13 @@ const Blogs: NextPage = () => {
     handleFilter(search);
   }, [search]);
 
+  const { search: urlSearchQuery } = router.query;
+
+  useEffect(() => {
+    if (urlSearchQuery && typeof urlSearchQuery === "string") {
+      setSearch(urlSearchQuery);
+    }
+  }, [urlSearchQuery]);
   return (
     <Main title={`Blogs | ${NAME}`} description={BLOGS_DESCRIPTION}>
       <input
@@ -48,18 +60,21 @@ const Blogs: NextPage = () => {
         onChange={handleSearch}
       />
       <div className="mt-16 divide-y divide-gray-700">
-        {blogs.map((blog: Blog, index: number) => (
-          <BlogList
-            key={index}
-            title={blog.title}
-            path={blog.path}
-            image={blog.image}
-            tags={blog.tags}
-            publishedAt={blog.publishedAt}
-            readingTime={blog.readingTime}
-            setSearch={setSearch}
-          />
-        ))}
+        {blogs.length === 0 ? (
+          <span className="flex h-full w-full items-center justify-center">no results found</span>
+        ) : (
+          blogs.map((blog: Blog, index: number) => (
+            <BlogList
+              key={index}
+              title={blog.title}
+              path={blog.path}
+              image={blog.image}
+              tags={blog.tags}
+              publishedAt={blog.publishedAt}
+              readingTime={blog.readingTime}
+            />
+          ))
+        )}
       </div>
     </Main>
   );

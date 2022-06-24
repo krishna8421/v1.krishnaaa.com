@@ -36,7 +36,7 @@
 }
 
 .prose pre code {
-  @apply p-0 text-gray-200;
+  @apply border-none p-0 text-gray-200;
 }
 
 .prose code:before,
