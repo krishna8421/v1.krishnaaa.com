@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 interface Props {
   text: string;
-  onClick?: (e?: any) => void | Promise<void>;
+  onClick?: any;
   bgColor?: string;
   textColor?: string;
   buttonColor?: string;
