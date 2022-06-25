@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { Main } from "@layouts/Main";
 import { CONTACT_DESCRIPTION, NAME } from "@constants";
 import { LayerButton } from "@components/LayerButton";
-import { ButtonHTMLAttributes, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { LoadingSpinner } from "@components/LoadingSpinner";
 
@@ -31,7 +31,7 @@ const Contact: NextPage = () => {
       });
       if (res.status === 200) {
         setError(null);
-        setSuccess("Message sent successfully");
+        setSuccess(res.data.message);
         reset();
       }
       setIsLoading(false);
@@ -84,7 +84,7 @@ const Contact: NextPage = () => {
         <p className="text-lg text-red-500">{error}</p>
       </div>
       <LayerButton
-        bgClass="mb-16 w-full m-auto"
+        bgClass="mb-16 w-fit m-auto"
         buttonClass={`py-3 px-6 w-32 ${isLoading ? "cursor-not-allowed" : "cursor-pointer"}`}
         onClick={isLoading ? () => {} : sendMail}
       >

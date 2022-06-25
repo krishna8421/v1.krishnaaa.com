@@ -8,9 +8,10 @@ import { ReactNode } from "react";
 
 interface Props extends PartialMetaData {
   children: ReactNode;
+  className?: string;
 }
 
-export const Main = ({ children, ...customMeta }: Props) => {
+export const Main = ({ children, className, ...customMeta }: Props) => {
   const router = useRouter();
   const meta: MetaData = {
     title: SITE_TITLE,
@@ -24,7 +25,9 @@ export const Main = ({ children, ...customMeta }: Props) => {
   return (
     // "selection:bg-opacity-99" for background opacity in safari.
     // Safari doesn't support 100% opacity for selection color.
-    <div className="text-gray-50 selection:bg-custom-purple selection:bg-opacity-99">
+    <div
+      className={`font-IBMPlexMono text-gray-50 selection:bg-custom-purple selection:bg-opacity-99 ${className}`}
+    >
       <Head>
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />

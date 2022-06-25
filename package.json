@@ -19,6 +19,7 @@
     "url": "https://github.com/krishna8421/krishnaaa.com.git"
   },
   "dependencies": {
+    "@react-hook/window-size": "^3.0.7",
     "@reduxjs/toolkit": "^1.8.1",
     "@sendgrid/mail": "^7.7.0",
     "classnames": "^2.3.1",
