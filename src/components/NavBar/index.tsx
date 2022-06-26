@@ -14,10 +14,12 @@ export const NavBar = () => {
       }`}
     >
       <Link href="/">
-        <div className="flex cursor-pointer select-none items-center gap-2">
-          <Logo />
-          <span className="text-lg font-bold">`krishna`</span>
-        </div>
+        <a>
+          <div className="flex cursor-pointer select-none items-center gap-2">
+            <Logo />
+            <span className="text-lg font-bold">`krishna`</span>
+          </div>
+        </a>
       </Link>
       <NavLinks />
       <MobileMenu toggleOpen={toggleOpen} isOpen={isOpen} />

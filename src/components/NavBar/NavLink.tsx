@@ -14,15 +14,17 @@ export const NavLink = ({ url, name, noHide, className }: Props) => {
   const router = useRouter();
   return (
     <Link href={url}>
-      <div
-        className={`${
-          isNavLinkActive(router.asPath, url)
-            ? "text-gray-50 underline decoration-custom-purple decoration-4 underline-offset-8"
-            : "text-gray-400 hover:text-gray-300"
-        } cursor-pointer transition-all ${noHide ? "" : "hidden"} md:inline-block ${className}`}
-      >
-        {name}
-      </div>
+      <a>
+        <div
+          className={`${
+            isNavLinkActive(router.asPath, url)
+              ? "text-gray-50 underline decoration-custom-purple decoration-4 underline-offset-8"
+              : "text-gray-400 hover:text-gray-300"
+          } cursor-pointer transition-all ${noHide ? "" : "hidden"} md:inline-block ${className}`}
+        >
+          {name}
+        </div>
+      </a>
     </Link>
   );
 };

@@ -18,17 +18,21 @@ export const BlogList = ({ title, path, image, tags, publishedAt, readingTime }:
   return (
     <div className="flex flex-col gap-6 px-2 py-6 sm:flex-row md:px-8">
       <Link href={`${path}`} passHref>
-        <Image
-          src={image}
-          alt={title}
-          width={IMAGE_HEIGHT}
-          height={IMAGE_HEIGHT}
-          className="cursor-pointer rounded-xl object-cover"
-        />
+        <a>
+          <Image
+            src={image}
+            alt={title}
+            width={IMAGE_HEIGHT}
+            height={IMAGE_HEIGHT}
+            className="cursor-pointer rounded-xl object-cover"
+          />
+        </a>
       </Link>
       <div className="flex w-full flex-col justify-between py-4 px-2">
         <Link href={`${path}`} passHref>
-          <h1 className="cursor-pointer text-2xl font-bold">{title}</h1>
+          <a>
+            <h1 className="cursor-pointer text-2xl font-bold">{title}</h1>
+          </a>
         </Link>
         <div className="my-8 sm:mt-0">
           {tags.map((tag, index) => (
