@@ -29,8 +29,6 @@ const Index: NextPage = () => {
     }
   }, [windowWidth]);
 
-  console.log(oneLine);
-
   return (
     <Main>
       <span className="mt-24 block text-xl text-gray-300">HI THERE! I&apos;M</span>
