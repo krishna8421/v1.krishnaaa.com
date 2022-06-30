@@ -24,7 +24,7 @@ const Contact: NextPage = () => {
     setIsLoading(true);
     e.preventDefault();
     try {
-      const res = await axios.post("/api/mail", {
+      const res = await axios.post("/api/contact-mail", {
         name,
         email,
         message,
