@@ -2,7 +2,7 @@ import { EMAIL_ADDRESS, GMAIL_ADDRESS, SITE_DOMAIN, TIME_ZONE } from "@constants
 import { NextApiRequest, NextApiResponse } from "next";
 import { capitalizeFirstLetter } from "@utils/capitalize";
 import sgMail from "@sendgrid/mail";
-import { mongoDBConnect } from "@db/connect";
+import dbConnect from "@db/connect";
 import { Contact } from "@db/models";
 
 export default async function verifyToken(req: NextApiRequest, res: NextApiResponse) {
@@ -53,7 +53,7 @@ export default async function verifyToken(req: NextApiRequest, res: NextApiRespo
   sgMail.setApiKey(SENDGRID_API_KEY);
 
   try {
-    await mongoDBConnect();
+    await dbConnect();
     const contact = new Contact(data);
     await contact.save();
     await sgMail.send(msg);
@@ -66,5 +66,8 @@ export default async function verifyToken(req: NextApiRequest, res: NextApiRespo
         message: error.response.body.errors[0].message,
       });
     }
+    return res.status(500).json({
+      message: "Internal server error",
+    });
   }
 }
