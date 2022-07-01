@@ -12,22 +12,22 @@ interface Props {
   publishedAt: string;
   readingTime: string;
 }
-const IMAGE_HEIGHT = 250;
 
 export const BlogList = ({ title, path, image, tags, publishedAt, readingTime }: Props) => {
   return (
     <div className="flex flex-col gap-6 px-2 py-6 sm:flex-row md:px-8">
-      <Link href={`${path}`} passHref>
-        <a>
-          <Image
-            src={image}
-            alt={title}
-            width={IMAGE_HEIGHT}
-            height={IMAGE_HEIGHT}
-            className="cursor-pointer rounded-xl object-cover"
-          />
-        </a>
-      </Link>
+      <div className="flex w-full justify-center sm:w-auto">
+        <Link href={`${path}`} passHref>
+          <div className="relative h-[20rem] w-[20rem] sm:h-[10rem] sm:w-[10rem]">
+            <Image
+              src={image}
+              alt={title}
+              layout="fill"
+              className="absolute cursor-pointer rounded-xl object-cover"
+            />
+          </div>
+        </Link>
+      </div>
       <div className="flex w-full flex-col justify-between py-4 px-2">
         <Link href={`${path}`} passHref>
           <a>
