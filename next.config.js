@@ -27,9 +27,6 @@ const nextConfig = {
   images: {
     domains: [],
   },
-  experimental: {
-    outputStandalone: true,
-  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
