@@ -1,12 +1,32 @@
-import { EMAIL_ADDRESS, GMAIL_ADDRESS, SITE_DOMAIN, TIME_ZONE } from "@constants";
+import { EMAIL_ADDRESS, GMAIL_ADDRESS, SENDGRID_API_KEY, SITE_DOMAIN, TIME_ZONE } from "@constants";
 import { NextApiRequest, NextApiResponse } from "next";
 import { capitalizeFirstLetter } from "@utils/capitalize";
 import sgMail from "@sendgrid/mail";
 import dbConnect from "@db/connect";
 import { Contact } from "@db/models";
+import { rateLimit } from "@utils/rateLimit";
+
+const limiter = rateLimit({
+  // 60 seconds
+  interval: 60 * 1000,
+  // Max 50 users per second
+  uniqueTokenPerInterval: 50,
+});
 
 export default async function verifyToken(req: NextApiRequest, res: NextApiResponse) {
-  const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+  if (!SENDGRID_API_KEY) {
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+
+  sgMail.setApiKey(SENDGRID_API_KEY);
+  // 3 requests per minute
+  if (await limiter.check(res, 3, "CACHE_TOKEN")) {
+    return res.status(429).json({
+      message: "Too many requests. Please try again after some time.",
+    });
+  }
   if (req.method !== "POST") {
     return res.status(405).json({
       message: "Method not allowed",
@@ -49,8 +69,6 @@ export default async function verifyToken(req: NextApiRequest, res: NextApiRespo
         <p>${data.message}</p>
     `,
   };
-
-  sgMail.setApiKey(SENDGRID_API_KEY);
 
   try {
     await dbConnect();

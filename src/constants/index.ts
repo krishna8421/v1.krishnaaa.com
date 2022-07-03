@@ -23,3 +23,6 @@ export const LINKEDIN_URL: string = `https://linkedin.com/in/${LINKEDIN_USERNAME
 
 // Google Analytics
 export const GOOGLE_ANALYTICS_ID: string = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
+// SendGrid API Key
+export const SENDGRID_API_KEY: string = process.env.SENDGRID_API_KEY;
