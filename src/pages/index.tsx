@@ -20,7 +20,7 @@ const Index: NextPage = () => {
   }, []);
 
   const windowWidth = useWindowWidth();
-
+  console.log(allBlogs);
   useEffect(() => {
     if (windowWidth <= 650) {
       setOneLine(false);
@@ -63,11 +63,9 @@ const Index: NextPage = () => {
       </span>
       <div className="my-20 flex w-fit flex-col items-center gap-8">
         <Link href="/contact">
-          <a>
-            <div className="w-fit cursor-pointer border-2 border-custom-green px-8 py-2 text-sm text-custom-green">
-              Contact me!
-            </div>
-          </a>
+          <div className="w-fit cursor-pointer border-2 border-custom-green px-8 py-2 text-sm text-custom-green">
+            Contact me!
+          </div>
         </Link>
         <div className="w-fit">
           <SocialIcons />
@@ -76,7 +74,7 @@ const Index: NextPage = () => {
       <div>
         <h3 className="mb-8 font-bold">recent blogs</h3>
         {blogs.length === 0 ? (
-          <p className="flex h-full w-full items-center justify-center">no recent blogs</p>
+          <p className="mb-6 flex h-full w-full items-center justify-center">no recent blogs</p>
         ) : (
           blogs.map((blog: Blog, index: number) => (
             <BlogList

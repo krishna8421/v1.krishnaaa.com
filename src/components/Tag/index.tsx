@@ -1,8 +1,6 @@
-import { BlogTag } from "@contentlayer/generated";
-
 interface Props {
   url?: string;
-  name: string | BlogTag;
+  name: string;
 }
 
 export default function Tags({ name, url }: Props) {

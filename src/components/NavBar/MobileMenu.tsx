@@ -23,8 +23,6 @@ export const MobileMenu = ({ toggleOpen, isOpen }: Props) => {
           <NavLink noHide url="/" name="home" />
           <NavLink noHide url="/projects" name="projects" />
           <NavLink noHide url="/blogs" name="blogs" />
-          <NavLink noHide url="/repos" name="repos" />
-          <NavLink noHide url="/logs" name="logs" />
           <NavLink noHide url="/contact" name="contact" />
           <Image
             src="/images/hamburger-circle-close.svg"

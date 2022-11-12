@@ -7,11 +7,9 @@ export const FooterLinks = () => {
       <div className="flex flex-col items-center gap-8">
         <FooterLink url="/" name="home" />
         <FooterLink url="/blogs" name="blogs" />
-        <FooterLink url="/contact" name="contact" />
       </div>
       <div className="flex flex-col items-center gap-8">
-        <FooterLink url="/logs" name="logs" />
-        <FooterLink url="/repos" name="repos" />
+        <FooterLink url="/contact" name="contact" />
         <FooterLink url="/projects" name="projects" />
       </div>
     </div>

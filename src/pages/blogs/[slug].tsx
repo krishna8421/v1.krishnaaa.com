@@ -35,9 +35,7 @@ const Blogs = ({ blog }: { blog: Blog }) => {
       <div className="mb-8 sm:mt-0">
         {blog.tags.map((tag, index) => (
           <Link href={`/blogs?search=${tag as unknown as string}`} key={index}>
-            <a>
-              <Tags name={tag} />
-            </a>
+            <Tags name={tag} />
           </Link>
         ))}
       </div>

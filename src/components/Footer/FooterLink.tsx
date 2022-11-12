@@ -6,8 +6,4 @@ interface Props {
   name: string;
 }
 
-export const FooterLink = ({ url, name }: Props) => (
-  <Link href={url}>
-    <a>{name}</a>
-  </Link>
-);
+export const FooterLink = ({ url, name }: Props) => <Link href={url}>{name}</Link>;

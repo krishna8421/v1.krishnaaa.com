@@ -63,13 +63,6 @@ const Project = defineDocumentType(() => ({
   },
 }));
 
-const BlogTag = defineNestedType(() => ({
-  name: "BlogTag",
-  fields: {
-    title: { type: "string", required: true },
-  },
-}));
-
 const Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: `blogs/*.mdx`,
@@ -93,7 +86,9 @@ const Blog = defineDocumentType(() => ({
     },
     tags: {
       type: "list",
-      of: BlogTag,
+      of: {
+        type: "string",
+      },
     },
   },
   computedFields: {

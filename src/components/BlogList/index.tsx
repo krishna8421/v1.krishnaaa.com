@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { BlogTag } from "@contentlayer/generated";
 import Image from "next/image";
 import Tags from "@components/Tag";
 
@@ -8,7 +7,7 @@ interface Props {
   title: string;
   path: string;
   image: string;
-  tags: BlogTag[];
+  tags: string[];
   publishedAt: string;
   readingTime: string;
 }
@@ -30,16 +29,12 @@ export const BlogList = ({ title, path, image, tags, publishedAt, readingTime }:
       </div>
       <div className="flex w-full flex-col justify-between py-4 px-2">
         <Link href={`${path}`} passHref>
-          <a>
-            <h1 className="cursor-pointer text-2xl font-bold">{title}</h1>
-          </a>
+          <h1 className="cursor-pointer text-2xl font-bold">{title}</h1>
         </Link>
         <div className="my-8 sm:mt-0">
           {tags.map((tag, index) => (
             <Link href={`/blogs?search=${tag as unknown as string}`} key={index}>
-              <a>
-                <Tags name={tag} />
-              </a>
+              <Tags name={tag} />
             </Link>
           ))}
         </div>
